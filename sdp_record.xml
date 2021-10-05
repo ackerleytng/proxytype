@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- "Service Discovery" from https://www.bluetooth.com/specifications/assigned-numbers/ explains each attribute-->
+<!-- https://github.com/GamesCreatorsClub/GCC-Joystick/blob/master/src/python/bt_joystick/sdp_record.py documents this very well too -->
+<record>
+  <!-- ServiceClassIDList -->
+  <attribute id="0x0001">
+    <sequence>
+      <uuid value="0x1124" /> <!-- HumanInterfaceDeviceService (HID) -->
+    </sequence>
+  </attribute>
+  <!-- ProtocolDescriptorList -->
+  <attribute id="0x0004">
+    <sequence>
+      <sequence>
+	<uuid value="0x0100" /> <!--L2CAP-->
+	<uint16 value="0x0011" /> <!-- Channel/Port -->
+      </sequence>
+      <sequence>
+	<uuid value="0x0011" /> <!--HIDP -->
+      </sequence>
+    </sequence>
+  </attribute>
+  <!-- BrowseGroupList -->
+  <attribute id="0x0005">
+    <sequence>
+      <uuid value="0x1002" />   <!-- PublicBrowseGroup -->
+    </sequence>
+  </attribute>
+  <!-- LanguageBaseAttributeIDList -->
+  <attribute id="0x0006">
+    <sequence>
+      <uint16 value="0x656e" /> <!-- Code ISO639, 0x656e means "en" -->
+      <uint16 value="0x006a" /> <!-- Encoding -->
+      <uint16 value="0x0100" /> <!-- Base Offset -->
+    </sequence>
+  </attribute>
+  <!-- BluetoothProfileDescriptorList -->
+  <attribute id="0x0009">
+    <sequence>
+      <sequence>
+	<uuid value="0x1124" /> <!-- HumanInterfaceDeviceService (HID) -->
+	<uint16 value="0x0100" /> <!-- Version -->
+      </sequence>
+    </sequence>
+  </attribute>
+  <!-- AdditionalProtocolDescriptorLists -->
+  <attribute id="0x000d">
+    <sequence>
+      <sequence>
+	<sequence>
+	  <uuid value="0x0100" /> <!-- L2CAP -->
+	  <uint16 value="0x0013" /> <!-- Channel/Port -->
+	</sequence>
+	<sequence>
+	  <uuid value="0x0011" /> <!-- HIDP -->
+	</sequence>
+      </sequence>
+    </sequence>
+  </attribute>
+  <!-- ServiceName -->
+  <attribute id="0x0100">
+    <text value="Clip Control" />
+  </attribute>
+  <!-- ServiceDescription -->
+  <attribute id="0x0101">
+    <text value="Control mobile phone from buttons" />
+  </attribute>
+  <!-- ProviderName -->
+  <attribute id="0x0102">
+    <text value="ackerleytng" />
+  </attribute>
+  <!-- HID_SPEC_V11.pdf from https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=246761 lists attributes and what they mean -->
+  <!-- HIDParserVersion -->
+  <attribute id="0x0201">
+    <uint16 value="0x0100" />
+  </attribute>
+  <!-- HIDDeviceSubclass -->
+  <attribute id="0x0202">
+    <uint8 value="0x4c" /> <!-- Keyboard, remote control -->
+  </attribute>
+  <!-- HIDCountryCode -->
+  <attribute id="0x0203">
+    <uint8 value="0x00" /> <!-- Not localized -->
+  </attribute>
+  <!-- HIDVirtualCable -->
+  <attribute id="0x0204">
+    <boolean value="false" />
+  </attribute>
+  <!-- HIDReconnectInitiate -->
+  <attribute id="0x0205">
+    <boolean value="false" />
+  </attribute>
+  <!-- HIDDescriptorList -->
+  <attribute id="0x0206">
+    <sequence>
+      <sequence>
+	<uint8 value="0x22" />
+	<text encoding="hex" value="05010906a101850175019508050719e029e715002501810295017508810395057501050819012905910295017503910395067508150026ff000507190029ff8100c005010902a10185020901a100950575010509190129051500250181029501750381017508950305010930093109381581257f8106c0c0" />
+      </sequence>
+    </sequence>
+  </attribute>
+  <!-- HIDLANGIDBaseList -->
+  <attribute id="0x0207">
+    <sequence>
+      <sequence>
+	<uint16 value="0x0409" /> <!-- English -->
+	<uint16 value="0x0100" />
+      </sequence>
+    </sequence>
+  </attribute>
+  <!-- HIDBatteryPower -->
+  <attribute id="0x0209">
+    <boolean value="true" />
+  </attribute>
+  <!-- HIDProfileVersion -->
+  <attribute id="0x020b">
+    <uint16 value="0x0100" />
+  </attribute>
+  <!-- HIDSupervisionTimeout -->
+  <attribute id="0x020c">
+    <uint16 value="0x0c80" />
+  </attribute>
+  <!-- HIDNormallyConnectable -->
+  <attribute id="0x020d">
+    <boolean value="false" />
+  </attribute>
+  <!-- HIDBootDevice -->
+  <attribute id="0x020e">
+    <boolean value="false" />
+  </attribute>
+  <!-- HIDSSRHostMaxLatency -->
+  <attribute id="0x020f">
+    <uint16 value="0x0640" />
+  </attribute>
+  <!-- HIDSSRHostMinTimeout -->
+  <attribute id="0x0210">
+    <uint16 value="0x0320" />
+  </attribute>
+</record>
